@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background: url('header-bg.png') no-repeat center/cover;
+    height: 400px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-cart {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-cart input {
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.hero-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.question-box {
+    padding: 0.5rem;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.product {
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.newsletter {
+    background-color: #0056FF;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    width: 300px;
+}
+
+.newsletter button {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-links {
+    background: #1b1b1b;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 2rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links h4 {
+    margin-bottom: 1rem;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
