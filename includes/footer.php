@@ -38,4 +38,8 @@
     </section>
 
     <p class="copyright">© 2024 radar. All rights reserved.</p>
+    <ul class="attributes">
+        <p style="font-weight: bold">Attributes</p> 
+        <li><a href="https://www.flaticon.com/free-icons/retail" title="retail icons">Retail icons created by Frey Wazza - Flaticon</a></li>
+</ul>
 </footer>
