@@ -1,9 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #caf0f8;
-}
 
 .hero {
     background-image: url('../images/header-bg-two.png');
@@ -40,14 +34,8 @@ body {
     color: #001f54;
     letter-spacing: 1px;
 }
-
-.search-cart {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-  
-  .cart-icon {
+ 
+.cart-icon {
     width: 30px;  /* Adjust to your desired size */
     height: 30px;
     cursor: pointer;
@@ -111,9 +99,21 @@ body {
     background-color: #003bb3; /* darker blue when hovering */
     transform: scale(1.05); /* subtle zoom */
 }
-  
 
-.question-box, .categories 
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.product {
+    margin: 1rem;
+    text-align: center;
+}
+
+.question-box 
 {
     padding: 0.5rem;
     width: 300px;
@@ -202,4 +202,63 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body{
+    overflow-x:hidden;
+    max-width: 100%;
+    margin:0;
+    margin-bottom: 150px;
+    background-color: #caf0f8;
+
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Andika';
+    padding-top: 16px;
+
+}
+/*
+#bg{
+    background-image: url(https://source.unsplash.com/featured/?men,fashion,sneakers);
+    https://images.unsplash.com/photo-1549942686-486aa99d2223
+    background-repeat: no-repeat;
+    min-height:600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    text-align: center;
+}*/
+
+#banner_content {
+    background-color: rgba(0, 0, 0, 0.7);
+    
+}
+.carousel-inner img {
+    width: 100%;
+    height:100%;
+}
+
+.container  a {
+    color:black;
+}
+.container a:hover{
+    color:grey;
+    
+}
+#size{
+    max-height:200px;
+}
+
+
+
+
 
