@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
-            header('Location: help.php?success=1');
+            header("location: help.php?Successful=yes");
+
         } else {
             header('Location: help.php?error=1');
         }

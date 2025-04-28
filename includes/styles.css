@@ -8,9 +8,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-size: cover; /* makes the image fill the div */
-    background-position: center; /* centers the image */
-    padding: 100px; /* space inside so the text isn't squished */
+    background-size: cover; /* filling the whole div */
+    background-position: center; 
+    padding: 100px; 
     text-align: center;
 }
 
@@ -36,7 +36,7 @@
 }
  
 .cart-icon {
-    width: 30px;  /* Adjust to your desired size */
+    width: 30px; /* not showing */
     height: 30px;
     cursor: pointer;
 }
@@ -96,8 +96,8 @@
 
   
 .deals-button:hover {
-    background-color: #003bb3; /* darker blue when hovering */
-    transform: scale(1.05); /* subtle zoom */
+    background-color: #003bb3;
+    transform: scale(1.05); 
 }
 
 .categories {
@@ -246,7 +246,26 @@ h6 {
     max-height:200px;
 }
 
-.expert-pannel-body /*not working?*/
-{
+.respond-header{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.respond-form{
+    text-align: center;
     padding-bottom: 100px;
+}
+
+.respond-form textarea{
+    width: 50%;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.image-fluid
+{
+    margin: 0 auto;
+    display: block;
 }

@@ -41,5 +41,6 @@
     <ul class="attributes">
         <p style="font-weight: bold">Attributes</p> 
         <li><a href="https://www.flaticon.com/free-icons/retail" title="retail icons">Retail icons created by Frey Wazza - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/free-icons/commerce-and-shopping" title="commerce and shopping icons">Commerce and shopping icons created by Pop Vectors - Flaticon</a><li>
 </ul>
 </footer>

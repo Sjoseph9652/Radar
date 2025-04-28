@@ -14,7 +14,6 @@
 <script>
 function ConfirmLogin() {
     <?php if (isset($_SESSION['email'])): ?>
-        // User is logged in - send form
         var question = document.querySelector('.question-box').value.trim();
         if (question) {
             var form = document.createElement('form');
@@ -33,7 +32,6 @@ function ConfirmLogin() {
             alert('Please type a question first!');
         }
     <?php else: ?>
-        // User isnt logged in - open signup
         $('#signup').modal('show');
     <?php endif; ?>
 }
