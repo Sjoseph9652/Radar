@@ -1,0 +1,9 @@
+1. Fix styling in the expert table
+2. Fix styling in response.php
+3. clickable products
+4. clickable cart
+5. mock checkout
+6. product page expert help
+7. check for dead links
+8. remove news letter?
+9. Railway deployment

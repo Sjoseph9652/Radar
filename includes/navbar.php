@@ -15,6 +15,7 @@
     </div>
 </nav> -->
 <!-- Navigation bar start -->
+
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#00b4d8">
     <div class="container">
         <a href="index.php" class="navbar-brand" style="font-family: 'Delius Swash Caps'">Radar</a>
@@ -30,6 +31,11 @@
                 <?php if (isset($_SESSION['email'])) { ?>
                     <li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
                 <?php } ?>
+                <?php if (isset($_SESSION['is_expert']) && $_SESSION['is_expert'] == 1) { ?>
+                  <li class="nav-item">
+                    <a href="expert_panel.php" class="nav-link">Expert Panel</a>
+                  </li>
+                <?php } ?>
             </ul>
 
             <ul class="navbar-nav ml-auto">
@@ -40,7 +46,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-placement="bottom" data-toggle="popover" data-trigger="hover" data-content="<?php echo $_SESSION['email']; ?>">
+                        <a href="account.php" class="nav-link" data-placement="bottom" data-toggle="popover" data-trigger="hover" data-content="<?php echo $_SESSION['email']; ?>">
                             <i class="fa fa-user-circle"></i>
                         </a>
                     </li>

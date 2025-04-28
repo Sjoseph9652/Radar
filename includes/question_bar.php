@@ -5,8 +5,38 @@
         <div class="input-group mb-3 justify-content-center">
             <input type="text" class="form-control question-box" placeholder="Type your question here" style="max-width: 500px;">
             <div class="input-group-append">
-                <button id="seek-help" class="btn btn-primary search-button">Ask!</button>
+                <button id="seek-help" class="btn btn-primary search-button" onclick="ConfirmLogin()">Ask!</button>
             </div>
         </div>
     </div>
 </header>
+
+<script>
+function ConfirmLogin() {
+    <?php if (isset($_SESSION['email'])): ?>
+        // User is logged in - send form
+        var question = document.querySelector('.question-box').value.trim();
+        if (question) {
+            // Create a form dynamically
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'submit_request.php';
+
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'question';
+            input.value = question;
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+            form.submit();
+        } else {
+            alert('Please type a question first!');
+        }
+    <?php else: ?>
+        // User is NOT logged in - open signup modal
+        $('#signup').modal('show');
+    <?php endif; ?>
+}
+</script>
+
