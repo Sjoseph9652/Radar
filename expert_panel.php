@@ -3,13 +3,11 @@
 require("includes/common.php");
 session_start();
 
-// Make sure the user is logged in and is an expert
 if (!isset($_SESSION['email']) || $_SESSION['is_expert'] != 1) {
-    header('Location: index.php'); // Redirect if not an expert
+    header('Location: index.php'); // needed?
     exit();
 }
 
-// Get all requests from the database
 $query = "SELECT id, customer_email, question, category, responded FROM requests WHERE responded = 0 ORDER BY id DESC";
 $result = mysqli_query($con, $query);
 

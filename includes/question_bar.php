@@ -17,7 +17,6 @@ function ConfirmLogin() {
         // User is logged in - send form
         var question = document.querySelector('.question-box').value.trim();
         if (question) {
-            // Create a form dynamically
             var form = document.createElement('form');
             form.method = 'POST';
             form.action = 'submit_request.php';
@@ -34,7 +33,7 @@ function ConfirmLogin() {
             alert('Please type a question first!');
         }
     <?php else: ?>
-        // User is NOT logged in - open signup modal
+        // User isnt logged in - open signup
         $('#signup').modal('show');
     <?php endif; ?>
 }
