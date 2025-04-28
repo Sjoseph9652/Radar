@@ -2,7 +2,7 @@
 session_start();
 require 'includes/common.php';
 
-// needs to be logged in ? 
+// needs to be logged in ? yes 
 if (!isset($_SESSION['email'])) {
     header('Location: login.php');
     exit();
