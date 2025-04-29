@@ -23,7 +23,4 @@ if($num==0){
     $_SESSION['is_expert'] = $row['is_expert'];
     header('location:index.php');
 }
-
-
-
 ?>
