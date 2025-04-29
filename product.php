@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'includes/common.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,15 +31,38 @@ session_start();
     <main>
 
         <section class="products">
-            <div class="product">
-                    <img src="images/shirt1.png" alt="White and Blue Cat T-shirt">
-                    <h3>Name of product (price)</h3>
-                    <p>Brief blurb here </p>
-            </div>
+                    <div class="product">
+        			<?php
+        				$url =  isset($_SERVER['HTTPS']) &&
+                				$_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+                			$url .= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		   <div> </div>
+                			$currentID = (explode("=",$url));
+                			$passID =$currentID[1];
+                			$sql = "SELECT * FROM photos WHERE id = '$passID'";
 
-        </section>
+        				$result = $con->query($sql);
+        				$row = $result->fetch_assoc();
+        				$photo = $row["photo-name"];
+
+        				echo "
+        				 <div class='product'>
+                            	<img src=images/$photo alt='Image'>";
+
+        				$sql = "SELECT * FROM products WHERE id = '$passID'";
+
+        				$result = $con->query($sql);
+        				$row = $result->fetch_assoc();
+        				$name = $row["name"];
+
+        				echo "
+                            <h3>$name ($)</h3>
+        				 </div>	";
+        			?>
+
+        		   <div> </div>
+
+                </section>
     </main>
     <?php include 'includes/footer.php' ?>
 </body>

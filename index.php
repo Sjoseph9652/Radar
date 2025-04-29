@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'includes/common.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ session_start();
 
     <section class="products">
             <div class="product">
-    			<a href="product.php?id=1">
+    			<a href="product.php?id=23">
                 <img src="images/headphones.png" alt="Wireless Headphones">
                 <h4>Wireless Headphones</h4>
                 <p>Premium sound quality</p>
@@ -74,7 +75,7 @@ session_start();
     			</a>
             </div>
             <div class="product">
-    			<a href="product.php?id=1">
+    			<a href="product.php?id=24">
                 <img src="images/smartwatch.png" alt="Smart Watch">
                 <h4>Smart Watch</h4>
                 <p>Fitness tracking</p>
@@ -82,7 +83,7 @@ session_start();
     			</a>
             </div>
             <div class="product">
-    			<a href="product.php?id=1">
+    			<a href="product.php?id=25">
                 <img src="images/shoes.png" alt="Running Shoes">
                 <h4>Running Shoes</h4>
                 <p>Lightweight comfort</p>
@@ -90,7 +91,7 @@ session_start();
     			</a>
             </div>
             <div class="product">
-    			<a href="product.php?id=1">
+    			<a href="product.php?id=26">
                 <img src="images/camera.png" alt="Camera Lens">
                 <h4>Camera Lens</h4>
                 <p>Professional grade</p>

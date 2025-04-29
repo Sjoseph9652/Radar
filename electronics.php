@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'includes/common.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
