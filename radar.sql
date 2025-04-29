@@ -57,6 +57,48 @@ INSERT INTO `products` (`id`, `name`, `price`) VALUES
 (15, 'Sony Speaker', 10500),
 (16, 'Airpods', 15000);
 
+--
+-- Additional products
+--
+
+INSERT INTO `products` (`id`, `name`, `price`) VALUES
+(17, 'Sunglasses', 6000),
+(18, 'Blue Cat t-shirt', 2000),
+(19, 'Blue Jeans', 4000),
+(20, 'White Baseball Hat', 1500),
+(21, 'Black 705 Shirt', 1500),
+(22, 'Black t-shirt', 3000),
+(23, 'Wireless Headphones grey', 10999),
+(24, 'Smart Watch', 29999),
+(25, 'Black Running Shoes', 8999),
+(26, 'Camera Lens', 59999);
+
+--
+-- Table structure for table `photos`
+--
+
+CREATE TABLE `photos` (
+  `photo-name` varchar(50),
+  `id` int(11) NOT NULL,
+)
+
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos`(`photo-name`, `id`) VALUES
+('sunglasses.png','17'),
+('shirt1.png','18'),
+('jeans.png','19'),
+('hat.png','20'),
+('blackshirt1.png','21'),
+('blackshirt2.png','22'),
+('headphones.png','23'),
+('smartwatch.png','24'),
+('shoes.png','25'),
+('camera.png','26');
+
+
 -- --------------------------------------------------------
 
 --
@@ -156,6 +198,12 @@ INSERT INTO `users_products` (`id`, `user_id`, `item_id`, `status`) VALUES
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `photos`
+--
+ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`);
 
 --

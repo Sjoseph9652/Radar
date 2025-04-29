@@ -1,37 +1,3 @@
-<!--<nav class="navbar">
-    <div class="logo">radar</div>
-    <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li> 
-        <li><a href="categories.php">Categories</a></li>
-        <li><a href="help.php">Expert Help</a></li>
-        <li><a href="login.php">My Account</a></li>
-    </ul>
-    <div class="search-cart">
-        <input type="text" placeholder="Search">
-        <a href="cart.php"> 
-            <img src= "images/cart.png" class="cart-icon">
-        </a>
-    </div>
-</nav> -->
-<!-- Navigation bar start -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radar Shop</title>
-    <link rel="stylesheet" href="styles.css?v=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link href='https://fonts.googleapis.com/css?family=Delius Swash Caps' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#00b4d8">
     <div class="container">
         <a href="index.php" class="navbar-brand" style="font-family: 'Delius Swash Caps'">Radar</a>
@@ -53,6 +19,13 @@
                   </li>
                 <?php } ?>
             </ul>
+            <div><a style="color:#00b4d8;">-------------</a></div>
+             <div class="search-cart">
+                 <input type="text" placeholder="Search">
+                     <a href="cart.php">
+                        <img src= "images/cart.png" class="cart-icon">
+                     </a>
+             </div>
 
             <div class="d-flex align-items-center ml-3">
               <form class="form-inline" method="GET" action="search.php">
