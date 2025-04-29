@@ -57,27 +57,47 @@ $user = mysqli_fetch_assoc($result);
                 $responseQuery = "SELECT * FROM responses WHERE customer_email = '$email'";
                 $responseResult = mysqli_query($con, $responseQuery);
 
-                if (mysqli_num_rows($responseResult) > 0) {
+                if (mysqli_num_rows($responseResult) > 0) 
+                {
                     while ($response = mysqli_fetch_assoc($responseResult)) {
+                        $responseId = $response['response_id'];
                         ?>
-                        <div class="alert alert-info d-flex justify-content-between align-items-center">
-                            <span><?php echo htmlspecialchars($response['response']); ?></span>
-                            <div>
+                        <div class="alert alert-info d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><?php echo htmlspecialchars($response['response']); ?></span>
                                 <form action="remove_question.php" method="POST" style="display:inline;">
-                                    <input type="hidden" name="response_id" value="<?php echo $response['response_id']; ?>">
-                                    <button type="submit" class="btn btn-success btn-sm">answered</button>
+                                    <input type="hidden" name="response_id" value="<?php echo $responseId; ?>">
+                                    <button type="submit" class="btn btn-success btn-sm">Answered</button>
+                                </form>
+                            </div>
+                    
+                            <button class="btn btn-outline-secondary btn-sm mt-2" onclick="toggleFollowUp('<?php echo $responseId; ?>')">
+                                Ask a Follow-up Question
+                            </button>
+                    
+                            <div id="follow-up-form-<?php echo $responseId; ?>" style="display: none;" class="mt-2">
+                                <form action="submit_request.php" method="POST" class="d-flex flex-column">
+                                    <input type="hidden" name="response_id" value="<?php echo $responseId; ?>">
+                                    <textarea name="question" class="form-control mb-2" placeholder="Type your follow-up question here..." required></textarea>
+                                    <button type="submit" class="btn btn-primary btn-sm align-self-start">Submit Follow-up</button>
                                 </form>
                             </div>
                         </div>
                         <?php
                     }
-                } else {
-                    echo "<div class='alert alert-warning'>No responses yet.</div>";
                 }
                 ?>
             </div>
         </div>
     </div>
+
+    <script>
+    function toggleFollowUp(responseId) {
+        const form = document.getElementById('follow-up-form-' + responseId);
+        form.style.display = (form.style.display === 'none') ? 'block' : 'none';
+    }
+    </script>
+
 </body>
 <?php include('includes/footer.php'); ?>
 </html>

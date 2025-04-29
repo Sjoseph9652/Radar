@@ -40,28 +40,26 @@ $search_query = isset($_GET['query']) ? $_GET['query'] : '';
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                         <div class="col-md-3 col-6 py-2">
-                            <div class="card">
-                                <div class="image-container">
-                                    <img src="<?php echo $row['image_path']; ?>" alt="" class="product-image">
-                                </div>
-                                <div class="figure-caption">
-                                    <h6><?php echo htmlspecialchars($row['name']); ?></h6>
-                                    <h6>Price: $<?php echo htmlspecialchars($row['price']); ?></h6>
-                                    <?php
-                                    if (!isset($_SESSION['email'])) {
-                                        ?>
-                                        <p><a href="index.php#login" role="button" class="btn btn-warning text-white">Add To Cart</a></p>
-                                        <?php
-                                    } else {
-                                        if (check_if_added_to_cart($row['id'])) {
-                                            echo '<p><a href="#" class="btn btn-warning text-white" disabled>Added to cart</a></p>';
-                                        } else {
-                                            ?>
-                                            <p><a href="cart-add.php?id=<?php echo $row['id']; ?>" name="add" value="add" class="btn btn-warning text-white">Add to cart</a></p>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
+                            <div class="card h-100">
+                                <a href="product.php?id=<?php echo $row['id']; ?>" style="text-decoration: none; color: inherit;">
+                                    <div class="image-container">
+                                    <img src="<?php echo htmlspecialchars($row['image_path']); ?>" class="img-fluid pb-1" style="height: 200px; object-fit: contain;" alt="<?php echo htmlspecialchars($row['name']); ?>">
+                                    </div>
+                                    <div class="figure-caption p-2">
+                                        <h6><?php echo htmlspecialchars($row['name']); ?></h6>
+                                        <h6>Price: $<?php echo htmlspecialchars($row['price']); ?></h6>
+                                    </div>
+                                </a>
+                                <div class="p-2">
+                                    <?php if (!isset($_SESSION['email'])) { ?>
+                                        <a href="index.php#login" role="button" class="btn btn-warning text-white btn-block">Add To Cart</a>
+                                    <?php } else {
+                                        if (check_if_added_to_cart($row['id'])) { ?>
+                                            <button class="btn btn-warning text-white btn-block" disabled>Added to cart</button>
+                                        <?php } else { ?>
+                                            <a href="cart-add.php?id=<?php echo $row['id']; ?>" class="btn btn-warning text-white btn-block">Add to cart</a>
+                                        <?php }
+                                    } ?>
                                 </div>
                             </div>
                         </div>

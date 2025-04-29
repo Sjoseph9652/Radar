@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/common.php'; // make sure you have $con = database connection here
+require 'includes/common.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ require 'includes/common.php'; // make sure you have $con = database connection 
     <?php include 'includes/question_bar.php' ?>
 
     <div class="container" style="margin-top: 80px;">
-        <h2 class="text-center">Fashion Products</h2>
+        <h2 class="text-center">Electronic Products</h2>
         <hr>
 
         <div class="row text-center">
@@ -35,23 +35,27 @@ require 'includes/common.php'; // make sure you have $con = database connection 
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <div class="col-md-3 col-6 py-2">
-                        <div class="card">
-                            <img src="<?php echo htmlspecialchars($row['image_path']); ?>" class="img-fluid pb-1" style="height: 200px; object-fit: contain;" alt="<?php echo htmlspecialchars($row['name']); ?>">
-                            <div class="figure-caption">
-                                <h6><?php echo htmlspecialchars($row['name']); ?></h6>
-                                <h6>Price: $<?php echo htmlspecialchars($row['price']); ?></h6>
+                        <div class="card position-relative">
+                            <a href="product.php?id=<?php echo $row['id']; ?>" class="stretched-link text-decoration-none text-dark">
+                                <img src="<?php echo htmlspecialchars($row['image_path']); ?>" class="img-fluid pb-1" style="height: 200px; object-fit: contain;" alt="<?php echo htmlspecialchars($row['name']); ?>">
+                                <div class="figure-caption">
+                                    <h6><?php echo htmlspecialchars($row['name']); ?></h6>
+                                    <h6>Price: $<?php echo htmlspecialchars($row['price']); ?></h6>
+                                </div>
+                            </a>
+                            <div class="card-footer bg-white border-0">
                                 <?php
                                 if (!isset($_SESSION['email'])) {
                                     ?>
-                                    <p><a href="index.php#login" role="button" class="btn btn-warning text-white">Add To Cart</a></p>
+                                    <a href="index.php#login" role="button" class="btn btn-warning text-white">Add To Cart</a>
                                     <?php
                                 } else {
                                     include_once 'includes/check-if-added.php';
                                     if (check_if_added_to_cart($row['id'])) {
-                                        echo '<p><a href="#" class="btn btn-warning text-white" disabled>Added to cart</a></p>';
+                                        echo '<a href="#" class="btn btn-warning text-white" disabled>Added to cart</a>';
                                     } else {
                                         ?>
-                                        <p><a href="cart-add.php?id=<?php echo $row['id']; ?>" name="add" value="add" class="btn btn-warning text-white">Add to cart</a></p>
+                                        <a href="cart-add.php?id=<?php echo $row['id']; ?>" name="add" value="add" class="btn btn-warning text-white">Add to cart</a>
                                         <?php
                                     }
                                 }

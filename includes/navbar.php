@@ -119,13 +119,8 @@
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd"  name="lpassword" placeholder="Password" required>
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input">
-                    <label for="checkbox" class="form-check-label">Check me out</label>
-                </div>
                 <button type="submit" class="btn btn-secondary btn-block" name="Submit">Login</button>
               </form>
-              <a href="http://">forgot password ?</a>
             </div>
             <div class="modal-footer">
               <p class="mr-auto">New User? <a href="#signup" data-toggle="modal" data-dismiss="modal" >signup</a></p>
@@ -168,11 +163,6 @@
                         <label for="validation2">Last Name</label>
                         <input type="text" class="form-control" id="validation2" name="lastName" placeholder="Last Name">
                     </div>
-                </div>
-                
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" required>
-                    <label for="checkbox" class="form-check-label">Agree terms and Condition</label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" name="Submit">Sign Up</button>
               </form>
