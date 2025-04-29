@@ -63,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h1>Respond to Request</h1>
     <p><strong>Customer Email:</strong> <?php echo htmlspecialchars($request['customer_email']); ?></p>
     <p><strong>Question:</strong> <?php echo htmlspecialchars($request['question']); ?></p>
-    <p><strong>Category:</strong> <?php echo htmlspecialchars($request['category']); ?></p>
 </div>
 
 <form action="respond.php?id=<?php echo $request_id; ?>" method="post">
