@@ -183,6 +183,32 @@ INSERT INTO `reviews` (`id`, `product_id`, `user_email`, `review`, `stars`, `cre
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `review` text NOT NULL,
+  `stars` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `product_id`, `user_email`, `review`, `stars`, `created_at`) VALUES
+(1, 23, 'blocksatjoe@gmail.com', 'Good speaker', 0, '2025-04-29 14:45:33'),
+(2, 23, 'blocksatjoe@gmail.com', 'afd', 0, '2025-04-29 14:48:22'),
+(3, 23, 'blocksatjoe@gmail.com', 'Good', 0, '2025-04-29 16:12:30'),
+(4, 23, 'blocksatjoe@gmail.com', 'DF', 0, '2025-04-29 16:50:04'),
+(5, 33, 'blocksatjoe@gmail.com', 'dfsg', 0, '2025-04-29 18:20:39');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
