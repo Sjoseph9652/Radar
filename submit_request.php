@@ -20,13 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
-            header("location: help.php?Successful=yes");
-
+            $_SESSION['question_success'] = true;
+            $_SESSION['header_question_success'] = true;
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+            exit();
         } else {
-            header('Location: help.php?error=1');
+            header("Location: " . $_SERVER['HTTP_REFERER']);
         }
     } else {
-        header('Location: help.php?error=empty'); // empty box
+        header("Location: " . $_SERVER['HTTP_REFERER']); // empty box
     }
 }
 ?>

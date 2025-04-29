@@ -111,6 +111,7 @@
 .product {
     margin: 1rem;
     text-align: center;
+    padding-bottom: 40px;
 }
 
 .question-box 
@@ -132,12 +133,6 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     padding: 0 2rem;
-}
-
-.product {
-    text-align: center;
-    padding-bottom: 40px;
-
 }
 
 .product img {
@@ -285,6 +280,7 @@ h6 {
     object-fit: contain;
     padding: 10px;
 }
+
   
 .help-images
 {
@@ -319,3 +315,15 @@ h6 {
     padding: 50px 20px;
     text-align: center;
 }
+
+.product-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+
+
