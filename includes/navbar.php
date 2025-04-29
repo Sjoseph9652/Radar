@@ -1,4 +1,3 @@
-
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#00b4d8">
     <div class="container">
         <a href="index.php" class="navbar-brand" style="font-family: 'Delius Swash Caps'">Radar</a>
@@ -27,6 +26,19 @@
                         <img src= "images/cart.png" class="cart-icon">
                      </a>
              </div>
+
+            <div class="d-flex align-items-center ml-3">
+              <form class="form-inline" method="GET" action="search.php">
+                <div class="input-group">
+                  <div class="form-outline" data-mdb-input-init>
+                    <input type="search" id="form1" name="query" class="form-control form-control-sm" style="height:30px;">
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-sm" data-mdb-ripple-init>
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
 
             <ul class="navbar-nav ml-auto">
                 <?php if (isset($_SESSION['email'])) { ?>
