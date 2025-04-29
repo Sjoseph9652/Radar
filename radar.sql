@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2025 at 10:17 AM
+-- Generation Time: Apr 29, 2025 at 08:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -133,7 +133,26 @@ INSERT INTO `requests` (`id`, `customer_email`, `question`, `category`, `respond
 (19, 'blocksatjoe@gmail.com', 'I would like to know more about computers?', 'uncategorized', 1),
 (20, 'blocksatjoe@gmail.com', 'help', 'uncategorized', 1),
 (21, 'blocksatjoe@gmail.com', 'dsfasf', 'uncategorized', 1),
-(22, 'blocksatjoe@gmail.com', 'Test Question', 'uncategorized', 0);
+(22, 'blocksatjoe@gmail.com', 'Test Question', 'uncategorized', 1),
+(23, 'blocksatjoe@gmail.com', 'Hello', 'uncategorized', 1),
+(24, 'blocksatjoe@gmail.com', 'gsfdg', 'uncategorized', 1),
+(25, 'blocksatjoe@gmail.com', 'sdgfdsfg', 'uncategorized', 1),
+(26, 'blocksatjoe@gmail.com', 'dfgdsfg', 'uncategorized', 1),
+(27, 'blocksatjoe@gmail.com', 'dsfaasdf', 'uncategorized', 1),
+(28, 'blocksatjoe@gmail.com', 'what do you mean by that', 'uncategorized', 1),
+(29, 'blocksatjoe@gmail.com', 'dsaf', 'uncategorized', 1),
+(30, 'blocksatjoe@gmail.com', 'test', 'uncategorized', 1),
+(31, 'blocksatjoe@gmail.com', 'fsda', 'uncategorized', 1),
+(32, 'blocksatjoe@gmail.com', 'sadfs', 'uncategorized', 1),
+(33, 'blocksatjoe@gmail.com', 'dsfa', 'uncategorized', 1),
+(34, 'blocksatjoe@gmail.com', 'sdaf', 'uncategorized', 1),
+(35, 'blocksatjoe@gmail.com', 'hyeryj', 'uncategorized', 1),
+(36, 'blocksatjoe@gmail.com', 'dfg', 'uncategorized', 1),
+(37, 'blocksatjoe@gmail.com', 'sdg', 'uncategorized', 1),
+(38, 'blocksatjoe@gmail.com', 'asdf', 'uncategorized', 0),
+(39, 'blocksatjoe@gmail.com', 'asdf', 'uncategorized', 0),
+(40, 'blocksatjoe@gmail.com', 'asdf', 'uncategorized', 0),
+(41, 'blocksatjoe@gmail.com', 'dsaf', 'uncategorized', 0);
 
 -- --------------------------------------------------------
 
@@ -149,6 +168,32 @@ CREATE TABLE `responses` (
   `response` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `review` text NOT NULL,
+  `stars` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `product_id`, `user_email`, `review`, `stars`, `created_at`) VALUES
+(1, 23, 'blocksatjoe@gmail.com', 'Good speaker', 0, '2025-04-29 14:45:33'),
+(2, 23, 'blocksatjoe@gmail.com', 'afd', 0, '2025-04-29 14:48:22'),
+(3, 23, 'blocksatjoe@gmail.com', 'Good', 0, '2025-04-29 16:12:30'),
+(4, 23, 'blocksatjoe@gmail.com', 'DF', 0, '2025-04-29 16:50:04'),
+(5, 33, 'blocksatjoe@gmail.com', 'dfsg', 0, '2025-04-29 18:20:39');
 
 -- --------------------------------------------------------
 
@@ -199,10 +244,12 @@ INSERT INTO `users_products` (`id`, `user_id`, `item_id`, `status`) VALUES
 (35, 68, 17, 'Confirmed'),
 (36, 68, 21, 'Confirmed'),
 (37, 68, 33, 'Confirmed'),
-(38, 68, 42, 'Added To Cart'),
-(39, 68, 33, 'Added To Cart'),
-(40, 68, 26, 'Added To Cart'),
-(41, 68, 23, 'Added To Cart');
+(38, 68, 42, 'Confirmed'),
+(39, 68, 33, 'Confirmed'),
+(40, 68, 26, 'Confirmed'),
+(42, 68, 33, 'Confirmed'),
+(44, 68, 23, 'Confirmed'),
+(45, 68, 37, 'Confirmed');
 
 --
 -- Indexes for dumped tables
@@ -226,6 +273,13 @@ ALTER TABLE `requests`
 ALTER TABLE `responses`
   ADD PRIMARY KEY (`response_id`),
   ADD KEY `question_id` (`question_id`);
+
+--
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `users`
@@ -255,13 +309,19 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `responses`
 --
 ALTER TABLE `responses`
-  MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -273,7 +333,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_products`
 --
 ALTER TABLE `users_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables
@@ -284,6 +344,12 @@ ALTER TABLE `users_products`
 --
 ALTER TABLE `responses`
   ADD CONSTRAINT `responses_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `requests` (`id`);
+
+--
+-- Constraints for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `users_products`
