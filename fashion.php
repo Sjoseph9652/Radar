@@ -11,13 +11,14 @@ session_start();
 </head>
 <body>
 
+    <?php include 'includes/navbar.php' ?>
     <header class="hero">
-        <?php include 'includes/navbar.php' ?>
-        <div class="hero-text">
-            <h1>Product Questions? Ask our Experts!</h1>
-            <input type="text" class="question-box" placeholder="Type your question here">
-        </div>
-    </header>
+    	<?php include 'includes/navbar.php' ?>
+             <div class="hero-text">
+                <h1 style="color:white;">Product Questions? Ask our Experts!</h1>
+                <input type="text" class="question-box" placeholder="Type your question here">
+            </div>
+        </header>
 
     <main>
         <section class="filter">

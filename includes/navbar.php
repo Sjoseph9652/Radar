@@ -1,20 +1,3 @@
-<!--<nav class="navbar">
-    <div class="logo">radar</div>
-    <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li> 
-        <li><a href="categories.php">Categories</a></li>
-        <li><a href="help.php">Expert Help</a></li>
-        <li><a href="login.php">My Account</a></li>
-    </ul>
-    <div class="search-cart">
-        <input type="text" placeholder="Search">
-        <a href="cart.php"> 
-            <img src= "images/cart.png" class="cart-icon">
-        </a>
-    </div>
-</nav> -->
-<!-- Navigation bar start -->
 
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#00b4d8">
     <div class="container">
@@ -37,6 +20,13 @@
                   </li>
                 <?php } ?>
             </ul>
+            <div><a style="color:#00b4d8;">-------------</a></div>
+             <div class="search-cart">
+                 <input type="text" placeholder="Search">
+                     <a href="cart.php">
+                        <img src= "images/cart.png" class="cart-icon">
+                     </a>
+             </div>
 
             <ul class="navbar-nav ml-auto">
                 <?php if (isset($_SESSION['email'])) { ?>

@@ -18,14 +18,14 @@ session_start();
 </head>
 <body>
 
-    <?php include 'includes/question_bar.php' ?>
+    <?php include 'includes/navbar.php' ?>
     <div class="hero">
-        <div class="hero-text">
-            <h1>Summer Collection 2025</h1>
-            <p>The hottest products for the best price!</p>
-            <button class="deals-button" onclick="window.location.href='shop.php';">Shop Now</button>
+            <div class="hero-text">
+                <h1 style="color:white;">Summer Collection 2025</h1>
+                <p style="color:white;">The hottest products for the best price!</p>
+                <button class="deals-button" onclick="window.location.href='shop.php';">Shop Now</button>
+            </div>
         </div>
-    </div>
 
     <section class="categories py-5">
         <div class="container text-center">
