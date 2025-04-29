@@ -20,63 +20,63 @@ session_start();
             </div>
         </header>
 
-       <div> THIS IS THE ELECTRONICS PAGE </div>
+       <div> THIS IS THE ELECTRONICS PAGE, UPDATE ITEM IMAGES AND DESCRIPTIONS  </div>
 
-    <main>
-        <section class="filter">
-            <button>☰ Filter</button>
-        </section>
+           <main>
+               <section class="filter">
+                   <button>☰ Filter</button>
+               </section>
 
-        <section class="products">
-            <div class="product">
-                <a href="product1.html">
-                    <img src="images/shirt1.png" alt="White and Blue Cat T-shirt">
-                    <h3>White and Blue Cat T-shirt ($20)</h3>
-                    <p>T-shirt Co.</p>
-                </a>
-            </div>
+               <section class="products">
+                   <div class="product">
+                       <a href="product.php?id=1">
+                           <img src="images/shirt1.png" alt="White and Blue Cat T-shirt">
+                           <h3>White and Blue Cat T-shirt ($20)</h3>
+                           <p>T-shirt Co.</p>
+                       </a>
+                   </div>
 
-            <div class="product">
-                <a href="product2.html">
-                    <img src="images/jeans.png" alt="Blue Jeans">
-                    <h3>Blue Jeans ($40)</h3>
-                    <p>Levi Strauss & Co.</p>
-                </a>
-            </div>
+                   <div class="product">
+                       <a href="product.php?id=2">
+                           <img src="images/jeans.png" alt="Blue Jeans">
+                           <h3>Blue Jeans ($40)</h3>
+                           <p>Levi Strauss & Co.</p>
+                       </a>
+                   </div>
 
-            <div class="product">
-                <a href="product3.html">
-                    <img src="images/hat.png" alt="Plain White Baseball Hat">
-                    <h3>Plain White Baseball Hat ($15)</h3>
-                    <p>Hat Co.</p>
-                </a>
-            </div>
+                   <div class="product">
+                       <a href="product.php?id=3">
+                           <img src="images/hat.png" alt="Plain White Baseball Hat">
+                           <h3>Plain White Baseball Hat ($15)</h3>
+                           <p>Hat Co.</p>
+                       </a>
+                   </div>
 
-            <div class="product">
-                <a href="product4.html">
-                    <img src="images/sunglasses.png" alt="Sunglasses">
-                    <h3>Sunglasses ($60)</h3>
-                    <p>Sunglasses Co.</p>
-                </a>
-            </div>
+                   <div class="product">
+                       <a href="product.php?id=4">
+                           <img src="images/sunglasses.png" alt="Sunglasses">
+                           <h3>Sunglasses ($60)</h3>
+                           <p>Sunglasses Co.</p>
+                       </a>
+                   </div>
 
-            <div class="product">
-                <a href="product5.html">
-                    <img src="images/blackshirt1.png" alt="Black 705 T-Shirt">
-                    <h3>Black 705 T-Shirt ($15)</h3>
-                    <p>Custom Ink</p>
-                </a>
-            </div>
+                   <div class="product">
+                       <a href="product.php?id=5">
+                           <img src="images/blackshirt1.png" alt="Black 705 T-Shirt">
+                           <h3>Black 705 T-Shirt ($15)</h3>
+                           <p>Custom Ink</p>
+                       </a>
+                   </div>
 
-            <div class="product">
-                <a href="product6.html">
-                    <img src="images/blackshirt2.png" alt="Crew Neck Black T-Shirt">
-                    <h3>Crew Neck Black T-Shirt ($30)</h3>
-                    <p>True Classic</p>
-                </a>
-            </div>
-        </section>
-    </main>
+                   <div class="product">
+                       <a href="product.php?id=6">
+                           <img src="images/blackshirt2.png" alt="Crew Neck Black T-Shirt">
+                           <h3>Crew Neck Black T-Shirt ($30)</h3>
+                           <p>True Classic</p>
+                       </a>
+                   </div>
+               </section>
+           </main>
     <?php include 'includes/footer.php' ?>
 </body>
 </html>

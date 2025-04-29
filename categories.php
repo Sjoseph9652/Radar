@@ -27,30 +27,36 @@ session_start();
     </header>
 
     <section class="categories py-5">
-        <div class="container text-center">
-            <h2>Popular Categories</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="product">
-                        <img src="images/fashion.jpg" alt="Fashion" class="img-fluid">
-                        <h3>Fashion</h3>
+            <div class="container text-center">
+                <h2>Popular Categories</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="product">
+    						<a href="fashion.php">
+                            <img src="images/fashion.jpg" alt="Fashion" class="img-fluid">
+                            <h3>Fashion</h3>
+    						</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="product">
-                        <img src="images/electronics.jpg" alt="Electronics" class="img-fluid">
-                        <h3>Electronics</h3>
+                    <div class="col-md-4 mb-4">
+                        <div class="product">
+    					<a href="electronics.php">
+                            <img src="images/electronics.jpg" alt="Electronics" class="img-fluid">
+                            <h3>Electronics</h3>
+    						</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="product">
-                        <img src="images/home.jpg" alt="Home" class="img-fluid">
-                        <h3>Home</h3>
+                    <div class="col-md-4 mb-4">
+                        <div class="product">
+    						<a href="home.php">
+                            <img src="images/home.jpg" alt="Home" class="img-fluid">
+                            <h3>Home</h3>
+    						</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 </body>
 
