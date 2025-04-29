@@ -83,7 +83,7 @@ session_start();
         </div>
         <div class="product">
             <a href="product.php?id=34">
-                <img src="images/shoes.png" alt="Running Shoes">
+                <img src="images/running-shoes.png" alt="Running Shoes">
                 <h4>Running Shoes</h4>
                 <p>Lightweight comfort</p>
                 <strong>$150</strong>

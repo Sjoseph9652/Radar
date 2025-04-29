@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2025 at 10:17 AM
+-- Generation Time: Apr 29, 2025 at 09:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -130,10 +130,9 @@ CREATE TABLE `requests` (
 --
 
 INSERT INTO `requests` (`id`, `customer_email`, `question`, `category`, `responded`) VALUES
-(19, 'blocksatjoe@gmail.com', 'I would like to know more about computers?', 'uncategorized', 1),
-(20, 'blocksatjoe@gmail.com', 'help', 'uncategorized', 1),
-(21, 'blocksatjoe@gmail.com', 'dsfasf', 'uncategorized', 1),
-(22, 'blocksatjoe@gmail.com', 'Test Question', 'uncategorized', 0);
+(48, 'user@gmail.com', 'What kind of TV sound system would work best in an apartment?', 'uncategorized', 0),
+(49, 'user@gmail.com', 'Are the clothing products on here made in the US', 'uncategorized', 0),
+(50, 'user@gmail.com', 'Will you price match on the smart phone? I\'ve seen it for cheaper somewhere else', 'uncategorized', 1);
 
 -- --------------------------------------------------------
 
@@ -149,6 +148,37 @@ CREATE TABLE `responses` (
   `response` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `responses`
+--
+
+INSERT INTO `responses` (`response_id`, `question_id`, `customer_email`, `expert_email`, `response`, `created_at`) VALUES
+(57, 50, 'user@gmail.com', 'expert@gmail.com', 'Yes, we can price match. Please send the link to the other site so we can confirm.', '2025-04-29 19:42:06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `review` text NOT NULL,
+  `stars` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `product_id`, `user_email`, `review`, `stars`, `created_at`) VALUES
+(11, 18, 'user@gmail.com', 'I\'ve had this phone for years and it never slows down!', 0, '2025-04-29 19:39:45'),
+(12, 25, 'user@gmail.com', 'Works alright. Not the best at grabbing dog hair. ', 0, '2025-04-29 19:40:11'),
+(13, 37, 'user@gmail.com', 'Good mid range kind of watch. It\'s lasted me a year so far ', 0, '2025-04-29 19:40:50');
 
 -- --------------------------------------------------------
 
@@ -176,7 +206,9 @@ INSERT INTO `users` (`id`, `email_id`, `first_name`, `last_name`, `phone`, `regi
 (66, 'sgah234@gmail.com', 'werty', 'erty', 0, '2019-03-18 13:55:46', 'e10adc3949ba59abbe56e057f20f883e', 0),
 (67, 'sham1234@gmail.com', 'Sham', 'das', 0, '2019-03-19 07:37:46', 'e10adc3949ba59abbe56e057f20f883e', 0),
 (68, 'blocksatjoe@gmail.com', 'Joesph', 'Salmon', 0, '2025-04-28 06:30:25', '563c94534a89ef46c15a2c460ffbe716', 1),
-(69, 'admin@admin.com', 'Admin', 'User', 0, '2025-04-28 21:28:57', 'admin', 1);
+(69, 'admin@admin.com', 'Admin', 'User', 0, '2025-04-28 21:28:57', 'admin', 1),
+(70, 'expert@gmail.com', 'expert', 'expert', 0, '2025-04-29 19:33:28', '81dc9bdb52d04dc20036dbd8313ed055', 1),
+(71, 'user@gmail.com', 'user', 'account', 0, '2025-04-29 19:32:32', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
 -- --------------------------------------------------------
 
@@ -196,13 +228,16 @@ CREATE TABLE `users_products` (
 --
 
 INSERT INTO `users_products` (`id`, `user_id`, `item_id`, `status`) VALUES
-(35, 68, 17, 'Confirmed'),
 (36, 68, 21, 'Confirmed'),
 (37, 68, 33, 'Confirmed'),
-(38, 68, 42, 'Added To Cart'),
-(39, 68, 33, 'Added To Cart'),
-(40, 68, 26, 'Added To Cart'),
-(41, 68, 23, 'Added To Cart');
+(38, 68, 42, 'Confirmed'),
+(39, 68, 33, 'Confirmed'),
+(40, 68, 26, 'Confirmed'),
+(42, 68, 33, 'Confirmed'),
+(44, 68, 23, 'Confirmed'),
+(45, 68, 37, 'Confirmed'),
+(48, 71, 26, 'Added To Cart'),
+(49, 71, 19, 'Added To Cart');
 
 --
 -- Indexes for dumped tables
@@ -226,6 +261,13 @@ ALTER TABLE `requests`
 ALTER TABLE `responses`
   ADD PRIMARY KEY (`response_id`),
   ADD KEY `question_id` (`question_id`);
+
+--
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `users`
@@ -255,25 +297,31 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `responses`
 --
 ALTER TABLE `responses`
-  MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `users_products`
 --
 ALTER TABLE `users_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Constraints for dumped tables
@@ -284,6 +332,12 @@ ALTER TABLE `users_products`
 --
 ALTER TABLE `responses`
   ADD CONSTRAINT `responses_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `requests` (`id`);
+
+--
+-- Constraints for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `users_products`

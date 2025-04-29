@@ -38,7 +38,6 @@ $result = mysqli_query($con, $query);
                 <tr>
                     <th>Customer Email</th>
                     <th>Question</th>
-                    <th>Category</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -47,7 +46,6 @@ $result = mysqli_query($con, $query);
                     <tr>
                         <td><?php echo htmlspecialchars($row['customer_email']); ?></td>
                         <td><?php echo htmlspecialchars($row['question']); ?></td>
-                        <td><?php echo htmlspecialchars($row['category']); ?></td>
                         <td><a href="respond.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Respond</a></td>
                     </tr>
                 <?php endwhile; ?>
