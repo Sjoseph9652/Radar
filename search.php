@@ -41,7 +41,9 @@ $search_query = isset($_GET['query']) ? $_GET['query'] : '';
                         ?>
                         <div class="col-md-3 col-6 py-2">
                             <div class="card">
-                                <img src="<?php echo $row['image_path']; ?>" alt="" class="img-fluid pb-1" style="height:200px; object-fit:cover;">
+                                <div class="image-container">
+                                    <img src="<?php echo $row['image_path']; ?>" alt="" class="product-image">
+                                </div>
                                 <div class="figure-caption">
                                     <h6><?php echo htmlspecialchars($row['name']); ?></h6>
                                     <h6>Price: $<?php echo htmlspecialchars($row['price']); ?></h6>
@@ -66,10 +68,11 @@ $search_query = isset($_GET['query']) ? $_GET['query'] : '';
                         <?php
                     }
                 } else {
-                    echo "<h4 class='text-center'>No products found matching your search.</h4>";
+                    echo "<h4 class='w-100 text-center'>No products found matching your search.</h4>";
+
                 }
             } else {
-                echo "<h4 class='text-center'>Please enter a search term.</h4>";
+                echo "<h4 class='w-100 text-center'>Please enter a search term.</h4>";
             }
         ?>
     </div>

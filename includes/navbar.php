@@ -39,10 +39,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <div class="d-flex align-items-center ml-3">
+            <form class="form-inline" method="GET" action="search.php">
+              <div class="input-group">
+                <div class="form-outline" data-mdb-input-init>
+                  <input type="search" id="form1" name="query" class="form-control form-control-sm" style="height:30px;">
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm" data-mdb-ripple-init>
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+
         <div class="collapse navbar-collapse justify-content-center" id="mynavbar">
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
-                <li class="nav-item"><a href="categories.php" class="nav-link">Categories</a></li>
                 <li class="nav-item"><a href="help.php" class="nav-link">Expert Help</a></li>
                 <?php if (isset($_SESSION['email'])) { ?>
                     <li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
@@ -53,19 +65,6 @@
                   </li>
                 <?php } ?>
             </ul>
-
-            <div class="d-flex align-items-center ml-3">
-              <form class="form-inline" method="GET" action="search.php">
-                <div class="input-group">
-                  <div class="form-outline" data-mdb-input-init>
-                    <input type="search" id="form1" name="query" class="form-control form-control-sm" style="height:30px;">
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-sm" data-mdb-ripple-init>
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
 
             <ul class="navbar-nav ml-auto">
                 <?php if (isset($_SESSION['email'])) { ?>
@@ -186,5 +185,38 @@
         </div>
       </div>
       <!--Signup trigger model ends-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});
+$(document).ready(function() {
+
+if(window.location.href.indexOf('#login') != -1) {
+  $('#login').modal('show');
+}
+
+});
+</script>
+<?php if (isset($_GET['error'])) {$z = $_GET['error'];
+    echo "<script type='text/javascript'>
+$(document).ready(function(){
+$('#signup').modal('show');
+});
+</script>";
+    echo "<script type='text/javascript'>alert('" . $z . "')</script>";}?>
+    
+<?php if (isset($_GET['errorl'])) {$z = $_GET['errorl'];
+    echo "<script type='text/javascript'>
+$(document).ready(function(){
+$('#login').modal('show');
+});
+</script>";
+    echo "<script type='text/javascript'>alert('" . $z . "')</script>";}?>
+?>
+
 
 
