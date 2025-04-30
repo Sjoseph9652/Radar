@@ -73,7 +73,7 @@ include 'includes/common.php';
 
 				</div>
 				<div class="row my-5">
-    <!-- Left Side: Product info, forms -->
+    <!-- Left Side: image over price -->
     <div class="col-md-8">
         <?php
             if (!isset($_SESSION['email'])) {
@@ -119,8 +119,6 @@ include 'includes/common.php';
             <button type="submit" class="btn btn-primary mt-3">Submit Review</button>
         </form>
     </div>
-
-    <!-- Right Side: Reviews -->
 	<div class="col-md-4 pl-md-4 mt-4 mt-md-0 border-left">
         <h4>Customer Reviews</h4>
         <?php

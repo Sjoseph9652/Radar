@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/common.php'; // make sure you have $con = database connection here
+require 'includes/common.php'; 
 ?>
 
 <!DOCTYPE html>
